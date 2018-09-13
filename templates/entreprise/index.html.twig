@@ -1,11 +1,11 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Entreprise index{% endblock %}
+{% block title %}Liste des entreprises{% endblock %}
 
 {% block body %}
-    <h1>Entreprise index</h1>
+    <h3>Liste des entreprises</h3>
 
-    <table class="table">
+    <table class="table table-striped table-sm table-bordered">
         <thead>
             <tr>
                 <th>Id</th>
@@ -41,5 +41,5 @@
         </tbody>
     </table>
 
-    <a href="{{ path('entreprise_new') }}">Create new</a>
+    <a href="{{ path('entreprise_new') }}" class="btn btn-primary">Créer une entreprise</a>
 {% endblock %}
