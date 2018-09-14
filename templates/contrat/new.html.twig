@@ -1,13 +1,13 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}New Entreprise{% endblock %}
+{% block title %}Créer un contrat{% endblock %}
 
 {% block body %}
     <div class="container">
-        <h2>Créer une entreprise</h2>
-        {{ include('entreprise/_form.html.twig') }}
+        <h2>Créer un contrat</h2>
+        {{ include('contrat/_form.html.twig') }}
         <div class="mt-4">
-            <a href="{{ path('entreprise_index') }}">
+            <a href="{{ path('contrat_index') }}">
                 <span data-feather="arrow-left"></span>
                 Retour à la liste
             </a>

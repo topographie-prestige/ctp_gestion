@@ -1,38 +1,80 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello {{ controller_name }}!{% endblock %}
+{% block title %}Accueil{% endblock %}
 
 {% block body %}
     <div class="row">
-        <div class="card">
-            <div class="card-header">
-                Featured
-            </div>
-            <div class="card-body">
-                <h5 class="card-title">Special title treatment</h5>
-                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
+        <!-- Main jumbotron for a primary marketing message or call to action -->
+        <div class="jumbotron">
+            <div class="container">
+                <h1 class="display-3">Hello, world!</h1>
+                <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
             </div>
         </div>
-        <div class="card">
-            <div class="card-header">
-                Featured
+
+        <div class="container">
+            <!-- Example row of columns -->
+            <div class="row">
+                <div class="card col-md-3 p-0 mr-4 mb-4">
+                    <div class="card-header">
+                        Entreprises
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">Section permettant de renseigner les informations des entreprises.</p>
+                        <p><a class="btn btn-primary" href="#" role="button">Détails &raquo;</a></p>
+                    </div>
+                </div>
+                <div class="card col-md-3 p-0 mr-4 mb-4">
+                    <div class="card-header">
+                        Contrats de location
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">Partie permettant de créer et de générer les contrats de location avec les entreprises.</p>
+                        <p><a class="btn btn-primary" href="#" role="button">Détails &raquo;</a></p>
+                    </div>
+                </div>
+                <div class="card col-md-3 p-0 mr-4 mb-4">
+                    <div class="card-header">
+                        Factures
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">Section permettant de générer les factures.</p>
+                        <p><a class="btn btn-primary" href="#" role="button">Détails &raquo;</a></p>
+                    </div>
+                </div>
+                <div class="card col-md-3 p-0 mr-4 mb-4">
+                    <div class="card-header">
+                        Comptabilité
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">SPartie permettant de gérer notre comptabilité.</p>
+                        <p><a class="btn btn-primary" href="#" role="button">Détails &raquo;</a></p>
+                    </div>
+                </div>
+                {#<div class="col-md-3 border rounded p-3 mb-4 mr-4">#}
+                    {#<h2>Entreprises</h2>#}
+                    {#<p>Section permettant de renseigner les informations des entreprises.</p>#}
+                    {#<p><a class="btn btn-primary" href="#" role="button">Détails &raquo;</a></p>#}
+                {#</div>#}
+                {#<div class="col-md-3 border rounded p-3 mb-4 mr-4">#}
+                    {#<h2>Contrats de location</h2>#}
+                    {#<p>Partie permettant de créer et de générer les contrats de location avec les entreprises.</p>#}
+                    {#<p><a class="btn btn-primary" href="#" role="button">Détails &raquo;</a></p>#}
+                {#</div>#}
+                {#<div class="col-md-3 border rounded p-3 mb-4 mr-4">#}
+                    {#<h2>Factures</h2>#}
+                    {#<p>Section permettant de générer les factures.</p>#}
+                    {#<p><a class="btn btn-primary" href="#" role="button">Détails &raquo;</a></p>#}
+                {#</div>#}
+                {#<div class="col-md-3 border rounded p-3 mb-4 mr-4">#}
+                    {#<h2>Comptabilité</h2>#}
+                    {#<p>Partie permettant de gérer notre comptabilité.</p>#}
+                    {#<p><a class="btn btn-primary" href="#" role="button">Détails &raquo;</a></p>#}
+                {#</div>#}
             </div>
-            <div class="card-body">
-                <h5 class="card-title">Special title treatment</h5>
-                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-header">
-                Featured
-            </div>
-            <div class="card-body">
-                <h5 class="card-title">Special title treatment</h5>
-                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-        </div>
+
+            <hr>
+
+        </div> <!-- /container -->
     </div>
 {% endblock %}
