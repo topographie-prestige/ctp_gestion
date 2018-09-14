@@ -38,9 +38,18 @@ class Contrat
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Entreprise", inversedBy="contrats")
-     * @ORM\JoinColumn(nullable=false)
      */
     private $entreprise;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Particulier", inversedBy="contrats")
+     */
+    private $particulier;
+
+    /**
+     * @ORM\Column(type="string", length=15)
+     */
+    private $type;
 
     public function getId(): ?int
     {
@@ -103,6 +112,30 @@ class Contrat
     public function setEntreprise(?Entreprise $entreprise): self
     {
         $this->entreprise = $entreprise;
+
+        return $this;
+    }
+
+    public function getParticulier(): ?Particulier
+    {
+        return $this->particulier;
+    }
+
+    public function setParticulier(?Particulier $particulier): self
+    {
+        $this->particulier = $particulier;
+
+        return $this;
+    }
+
+    public function getType(): ?string
+    {
+        return $this->type;
+    }
+
+    public function setType(string $type): self
+    {
+        $this->type = $type;
 
         return $this;
     }

@@ -22,6 +22,24 @@ require('bootstrap');
 // require('bootstrap/js/dist/tooltip');
 // require('bootstrap/js/dist/popover');
 
+var changeTypeContrat = function() {
+    if($('#contrat_type_0').is(':checked')) {
+        $('#contrat_entreprise').val(null).closest('.form-group').hide();
+        $('#contrat_particulier').closest('.form-group').show();
+    }
+    if($('#contrat_type_1').is(':checked')) {
+        $('#contrat_entreprise').closest('.form-group').show();
+        $('#contrat_particulier').val(null).closest('.form-group').hide();
+    }
+}
+
 $(document).ready(function() {
     $('[data-toggle="popover"]').popover();
+    $('#contrat_entreprise').closest('.form-group').hide();
+    $('#contrat_particulier').closest('.form-group').hide();
+    $('input[name*=type]').click(function() {
+        changeTypeContrat();
+    });
+    
+    changeTypeContrat();
 });
