@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Particulier{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h1>Modification du particulier</h1>
+
+        {{ include('particulier/_form.html.twig', {'button_label': 'Update'}) }}
+
+        <div class="mt-4">
+            <a href="{{ path('particulier_index') }}">
+                <span data-feather="arrow-left"></span>
+                Retour à la liste
+            </a>
+        </div>
+
+        {{ include('particulier/_delete_form.html.twig') }}
+    </div>
+{% endblock %}

@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Particulier{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h1>Particulier</h1>
+
+        <table class="table">
+            <tbody>
+                <tr>
+                    <th>Id</th>
+                    <td>{{ particulier.id }}</td>
+                </tr>
+                <tr>
+                    <th>Nom</th>
+                    <td>{{ particulier.nom }}</td>
+                </tr>
+                <tr>
+                    <th>Prenom</th>
+                    <td>{{ particulier.prenom }}</td>
+                </tr>
+                <tr>
+                    <th>Email</th>
+                    <td>{{ particulier.email }}</td>
+                </tr>
+                <tr>
+                    <th>Adresse</th>
+                    <td>{{ particulier.adresse }}</td>
+                </tr>
+                <tr>
+                    <th>Telephone</th>
+                    <td>{{ particulier.telephone }}</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="mt-4">
+            <a href="{{ path('particulier_index') }}">
+                <span data-feather="arrow-left"></span>
+                Retour à la liste
+            </a>
+        </div>
+
+        <a href="{{ path('particulier_edit', {'id': particulier.id}) }}">edit</a>
+
+        {{ include('particulier/_delete_form.html.twig') }}
+    </div>
+{% endblock %}

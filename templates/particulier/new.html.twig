@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Créer un particulier{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h2>Créer un particulier</h2>
+        {{ include('particulier/_form.html.twig') }}
+        <div class="mt-4">
+            <a href="{{ path('particulier_index') }}">
+                <span data-feather="arrow-left"></span>
+                Retour à la liste
+            </a>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="{{ asset('build/app.css') }}">
+        <title>{% block title %}Connexion{% endblock %}</title>
+        {% block stylesheets %}{% endblock %}
+        {# beware that the blocks in your template may be named different #}
+        {% block head_css %}
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        {% endblock %}
+    </head>
+    <body>
+    <div class="row" style="width: 25%; margin: 25px auto;">
+        <div class="">
+            <div class="well">
+                <form action="{{ path('security_login') }}" method="post" class="form-signin">
+                    <fieldset>
+                        <legend><i class="fa fa-lock" aria-hidden="true"></i> Connexion</legend>
+                        <div class="form-group">
+                            <label for="username">Username</label>
+                            <input type="text" id="username" name="_username" value="{{ last_username }}" class="form-control"/>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Mot de passe</label>
+                            <input type="password" id="password" name="_password" class="form-control" />
+                        </div>
+                        <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}"/>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fa fa-sign-in" aria-hidden="true"></i> Connexion
+                        </button>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+        
+        {% block javascripts %}{% endblock %}
+        
+        {% block head_js %}
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <!-- Icons -->
+        <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
+        <script>
+            feather.replace()
+        </script>
+         
+        {% endblock %}
+        <script src="{{ asset('/ctp_gestion/public/build/app.js') }}"></script>
+    </body>
+</html>

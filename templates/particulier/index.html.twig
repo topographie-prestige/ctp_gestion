@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Créer un particulier{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h2>Créer un particulier</h2>
+        <table class="table table-striped table-sm table-bordered">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Nom</th>
+                    <th>Prenom</th>
+                    <th>Email</th>
+                    <th>Adresse</th>
+                    <th>Telephone</th>
+                    <th>actions</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for particulier in particuliers %}
+                <tr>
+                    <td>{{ particulier.id }}</td>
+                    <td>{{ particulier.nom }}</td>
+                    <td>{{ particulier.prenom }}</td>
+                    <td>{{ particulier.email }}</td>
+                    <td>{{ particulier.adresse }}</td>
+                    <td>{{ particulier.telephone }}</td>
+                    <td>
+                        <a href="{{ path('particulier_show', {'id': particulier.id}) }}">show</a>
+                        <a href="{{ path('particulier_edit', {'id': particulier.id}) }}">edit</a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="7">no records found</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+        <a href="{{ path('particulier_new') }}" class="btn btn-primary">Créer un particulier</a>
+    </div>
+{% endblock %}
