@@ -99,7 +99,7 @@ class ContratService
                 <p>IL A ETE CONVENU CE QUI SUIT :</p>
                 
                 <h5>1 - Nature et date d\'effet du contrat</h5>
-                Le loueur met à disposition du locataire, un ' . $this->materiel->getNom() . ' de marque un ' . $this->materiel->getMarque() . ', modèle un ' . $this->materiel->getModele() . ', à titre onéreux et à compter du <b>' . $this->contrat->getDateDebut()->format('d-m-Y') . '</b>.
+                Le loueur met à disposition du locataire, un <b>' . $this->materiel->getNom() . '</b> de marque un <b>' . $this->materiel->getMarque() . '</b>, modèle un <b>' . $this->materiel->getModele() . '</b>, à titre onéreux et à compter du <b>' . $this->contrat->getDateDebut()->format('d-m-Y') . '</b>.
                 
                 <h5>2 - Etat de l\'appaeil</h5>
                 Lors de la remise de l’appareil et lors de sa restitution, un procès-verbal de l\'état sera établi entre le locataire et le loueur. 
