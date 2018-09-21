@@ -4,25 +4,39 @@ namespace App\Service;
 
 class Contrat
 {
-    static public function get($contrat) 
+    static public function get($contrat)
     {
         $html = '<style>
-                page {font-family: Arial, Helvetica, sans-serif;}
+                page {font-family: Times, serif;}
                 ul li {display: block; float: left; height: 27px; list-style: none; margin-right: 20px;}
                 h2 {text-align: center;}
+                h5 {font-size: 16px; margin-top: 35px;}
                 h2, h5 {text-transform: uppercase; color: #62B4F5;}
-                div.content {font-size: 13px; text-align: justify;line-height: 1.6;}
+                div.content {font-size: 14px; text-align: justify;line-height: 1.6; margin-top: 20px;}
+                div.date {text-align: right;margin-top: 20px;}
+                div.footer {text-align: right;font-size: 10px; margin-right: 80px;}
+                div.signature {margin-top: 50px;}
+                div.locataire, div.loueur {text-align: center;width: 50%; display: inline; border: 1px; padding: 10px;line-height: 1; position: relative;}
                 a {color: #62B4F5;}
                 </style>';
-        $html .= '<page backtop="7mm" backbottom="7mm" backleft="25mm" backright="25mm">';
+        $html .= self::getPage();
+        return $html;
+    }
+
+    static public function getPage()
+    {
+        $html = '<page backtop="7mm" backbottom="7mm" backleft="20mm" backright="20mm">';
         $html .= self::header();
         $html .= self::footer();
         $html .= self::title();
-        $html .= self::content();
+        $html .= self::contentPage1();
+        $html .= self::contentPage2();
+        $html .= self::contentDate();
+        $html .= self::contentSignature();
         $html .= '</page>';
         return $html;
     }
-    
+
     static public function header() 
     {
         return '<page_header>&nbsp;</page_header>';
@@ -30,7 +44,7 @@ class Contrat
     
     static public function footer() 
     {
-        return '<page_footer><b>CONTRAT DE LOCATION – CTP</b> – LOCATAIRE</page_footer>';
+        return '<page_footer><div class="footer"><b>CONTRAT DE LOCATION – CTP</b> – LOCATAIRE</div></page_footer>';
     }
     
     static function title() 
@@ -38,13 +52,13 @@ class Contrat
         return '<h2>Contrat de location</h2>';
     }
     
-    static public function content() 
+    static public function contentPage1()
     {
         $content = '
             <div class="content">
                 <p>ENTRE,</p> 
-                <p>Le Cabinet Topographie Prestige (<b>CTP</b>), siège social : hersent derrière la station SGF, villa N°542, Thiès ; 
-                email : <a href="mailto:contact@topographie–prestige.com">contact@topographie–prestige.com</a>; Tel : 77 335 02 02 – BP 553 RP Thies ; ci-après dénommée sous le vocable de : 
+                <p>Le Cabinet Topographie Prestige (<b>CTP</b>), siège social : hersent derrière la station SGF, villa N°542, Thiès; 
+                email : <a href="mailto:contact@topographie–prestige.com">contact@topographie–prestige.com</a>; Tel : 77 335 02 02 – BP 553 RP Thies; ci-après dénommée sous le vocable de : 
                 Loueur</p>
                 <p>Et</p> 
                 <p>
@@ -68,7 +82,15 @@ class Contrat
                     <li>Restauration,</li>
                     <li>Logement en dehors de la région de Thiès et Dakar.</li>
                 </ul>
-                
+            </div>';
+        
+        return $content;
+    }
+
+    static public function contentPage2()
+    {
+        $content = '
+            <div class="content">                
                 <h5>4 - Durée et restitution de l\'appareil</h5>
                 Le contrat est pour une durée de ……….… (………….) et la restitution de l’appareil devra se faire au plus tard 24 h de la fin du présent contrat.
                 
@@ -77,7 +99,28 @@ class Contrat
                 <p>Au cas où tel règlement ne pourrait être obtenu à propos du différend, compétence est donnée aux juridictions compétentes.</p>
                 <p>Fait en deux exemplaires originaux remis à chacune des parties, </p>
             </div>';
-        
+
+        return $content;
+    }
+
+    static public function contentDate()
+    {
+        $content = '
+            <div class="content date">                
+                A Dakar, le 30 – 08 – 2018
+            </div>';
+
+        return $content;
+    }
+
+    static public function contentSignature()
+    {
+        $content = '
+            <div class="content signature">                
+                <div class="locataire">Le <b>loueur</b><br/>signature précédée de la mention manuscrite bon pour accord</div>
+                <div class="loueur">Le <b>locataire</b><br/>signature précédée de la mention manuscrite bon pour accord</div>
+            </div>';
+
         return $content;
     }
 }
