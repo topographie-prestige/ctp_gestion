@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des matériels{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h1>Liste des matériels</h1>
+
+    <table class="table table-striped table-sm table-bordered">
+        <thead>
+            <tr>
+                {#<th>Id</th>#}
+                <th>Nom</th>
+                <th>Marque</th>
+                <th>Modele</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for materiel in materiels %}
+            <tr>
+                {#<td>{{ materiel.id }}</td>#}
+                <td>{{ materiel.nom }}</td>
+                <td>{{ materiel.marque }}</td>
+                <td>{{ materiel.modele }}</td>
+                <td>
+                    <a href="{{ path('materiel_show', {'id': materiel.id}) }}" data-toggle="tooltip" data-placement="bottom" title="Afficher"><span data-feather="eye"></span></a>
+                    <a href="{{ path('materiel_edit', {'id': materiel.id}) }}" data-toggle="tooltip" data-placement="bottom" title="Modifier"><span data-feather="edit-2"></span></a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('materiel_new') }}"class="btn btn-primary">Créer un matériel</a>
+
+{% endblock %}

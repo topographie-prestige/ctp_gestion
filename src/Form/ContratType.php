@@ -40,6 +40,7 @@ class ContratType extends AbstractType
                     )
                 )
             )
+            ->add('materiel')
             ->add('type', ChoiceType::class, array(
                     'choices'  => array(
                         'Particulier' => 'PARTICULIER',

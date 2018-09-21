@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Materiel{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h2>Créer un matériel</h2>
+    {{ include('materiel/_form.html.twig') }}
+    <div class="mt-4">
+        <a href="{{ path('materiel_index') }}">
+            <span data-feather="arrow-left"></span>
+            Retour à la liste
+        </a>
+    </div>
+</div>
+{% endblock %}

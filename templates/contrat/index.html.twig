@@ -13,6 +13,7 @@
                     <th>DateFin</th>
                     <th>DateSignature</th>
                     <th>Prix</th>
+                    <th>Matériel</th>
                     <th>Particulier</th>
                     <th>Entreprise</th>
                     <th>actions</th>
@@ -24,12 +25,14 @@
                     <td>{{ contrat.dateDebut ? contrat.dateDebut|date('Y-m-d H:i:s') : '' }}</td>
                     <td>{{ contrat.dateFin ? contrat.dateFin|date('Y-m-d H:i:s') : '' }}</td>
                     <td>{{ contrat.dateSignature ? contrat.dateSignature|date('Y-m-d H:i:s') : '' }}</td>
+                    <td>{{ contrat.prix }} FrCFA</td>
+                    <td>{{ contrat.materiel ? contrat.materiel.nom : ''}}</td>
                     <td>{{ contrat.particulier ? contrat.particulier.prenom ~ ' ' ~ contrat.particulier.nom ~ ' (' ~ contrat.particulier.entreprise ~ ')' }}</td>
                     <td>{{ contrat.entreprise ? contrat.entreprise : '' }}</td>
-                    <td>{{ contrat.prix }} FrCFA</td>
                     <td>
-                        <a href="{{ path('contrat_show', {'id': contrat.id}) }}">show</a>
-                        <a href="{{ path('contrat_edit', {'id': contrat.id}) }}">edit</a>
+                        <a href="{{ path('contrat_show', {'id': contrat.id}) }}" data-toggle="tooltip" data-placement="bottom" title="Afficher"><span data-feather="eye"></span></a>
+                        <a href="{{ path('contrat_edit', {'id': contrat.id}) }}" data-toggle="tooltip" data-placement="bottom" title="Modifier"><span data-feather="edit-2"></span></a>
+                        <a href="{{ path('contrat_pdf', {'id': contrat.id}) }}" data-toggle="tooltip" data-placement="bottom" title="Télécharger"><span data-feather="download"></span></a>
                     </td>
                 </tr>
             {% else %}

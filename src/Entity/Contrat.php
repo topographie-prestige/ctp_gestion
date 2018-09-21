@@ -51,6 +51,11 @@ class Contrat
      */
     private $type;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Materiel", inversedBy="contrat")
+     */
+    private $materiel;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -136,6 +141,18 @@ class Contrat
     public function setType(string $type): self
     {
         $this->type = $type;
+
+        return $this;
+    }
+
+    public function getMateriel(): ?Materiel
+    {
+        return $this->materiel;
+    }
+
+    public function setMateriel(?Materiel $materiel): self
+    {
+        $this->materiel = $materiel;
 
         return $this;
     }
