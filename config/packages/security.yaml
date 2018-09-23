@@ -42,3 +42,10 @@ security:
         # Là dans ce cas seul les utilisateurs ayant le rôle ROLE_ADMIN
         # peuvent acceder à toutes les pages commençant par /admin
         - { path: '^/home', roles: ROLE_ADMIN }
+        - { path: '^/entreprise', roles: ROLE_ADMIN }
+        - { path: '^/particulier', roles: ROLE_ADMIN }
+        - { path: '^/particulier', roles: ROLE_ADMIN }
+        - { path: '^/contrat', roles: ROLE_ADMIN }
+        - { path: '^/modele', roles: ROLE_ADMIN }
+        - { path: '^/activite', roles: ROLE_ADMIN }
+        - { path: '^/facture', roles: ROLE_ADMIN }
